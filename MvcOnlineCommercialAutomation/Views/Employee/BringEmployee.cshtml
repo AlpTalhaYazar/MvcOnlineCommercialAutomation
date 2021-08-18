@@ -1,0 +1,30 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Employee
+
+@{
+    ViewBag.Title = "BringEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Employee Update Page</h2>
+<br />
+
+@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.EmployeeID)
+    @Html.LabelFor(x => x.EmployeeFirstName)
+    @Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.EmployeeFirstName, "", new { @style = "color:Red" })
+    <br />
+    @Html.LabelFor(x => x.EmployeeLastName)
+    @Html.TextBoxFor(x => x.EmployeeLastName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EmployeeImage)
+    @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Department.DepartmentName)
+    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.empdp, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+}
+

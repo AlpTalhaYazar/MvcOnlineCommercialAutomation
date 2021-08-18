@@ -1,0 +1,26 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Client
+
+@{
+    ViewBag.Title = "AddClient";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>New Client Page</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.ClientFirstName)
+    @Html.TextBoxFor(x => x.ClientFirstName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ClientLastName)
+    @Html.TextBoxFor(x => x.ClientLastName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ClientCity)
+    @Html.TextBoxFor(x => x.ClientCity, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ClientMail)
+    @Html.TextBoxFor(x => x.ClientMail, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>

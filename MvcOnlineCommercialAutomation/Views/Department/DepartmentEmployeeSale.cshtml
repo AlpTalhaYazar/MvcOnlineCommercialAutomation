@@ -1,0 +1,40 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<SalesTransaction>
+
+@{
+    ViewBag.Title = "DepartmentEmployeeSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Department Employee Sale</h2>
+<br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Personel Adı: @ViewBag.empnm</li>
+</ol>
+<table class="table table-condensed">
+    <tr>
+        <th>Sale ID</th>
+        <th>Product</th>
+        <th>Client</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Total</th>
+        <th>Date</th>
+    </tr>
+
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>@s.SaleID</td>
+            <td>@s.Product.ProductName</td>
+            <td>@s.Client.ClientFirstName @s.Client.ClientLastName</td>
+            <td>@s.Price</td>
+            <td>@s.Amount</td>
+            <td>@s.Total</td>
+            <td>@s.Date.ToString("dd/MM/yyyy")</td>
+        </tr>
+    }
+</table>
+
+

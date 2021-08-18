@@ -1,0 +1,60 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<SalesTransaction>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table id="tbl1" class="table table-striped" style="margin-top:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Client</th>
+            <th>Employee</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Date</th>
+            <th>Update</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SaleID</td>
+            <td>@x.Product.ProductName</td>
+            <td>@x.Client.ClientFirstName @x.Client.ClientLastName</td>
+            <td>@x.Employee.EmployeeFirstName @x.Employee.EmployeeLastName</td>
+            <td>@x.Amount</td>
+            <td>@x.Price</td>
+            <td>@x.Total</td>
+            <td>@x.Date.ToString("dd/MM/yyyy")</td>
+            <td><a href="/Sale/BringSale/@x.SaleID" class="btn btn-warning">Update</a></td>
+            <td><a href="/Sale/DetailSale/@x.SaleID" class="btn btn-default" class="btn btn-default" style="background-color:blue; color:white">Details</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Sale/AddSale" class="btn btn-info">Add New Sale</a>
+
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+
+<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+<script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>
+
+<script>
+    $('#tbl1').dataTable({});
+</script>
+
+

@@ -1,0 +1,40 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<SalesTransaction>
+
+@{
+    ViewBag.Title = "DetailSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Sale Detail Page</h2>
+<br />
+
+<table class="table table-striped" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Client</th>
+        <th>Employee</th>
+        <th>Amount</th>
+        <th>Price</th>
+        <th>Total</th>
+        <th>Date</th>
+        <th>Print</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SaleID</td>
+            <td>@x.Product.ProductName</td>
+            <td>@x.Client.ClientFirstName @x.Client.ClientLastName</td>
+            <td>@x.Employee.EmployeeFirstName @x.Employee.EmployeeLastName</td>
+            <td>@x.Amount</td>
+            <td>@x.Price</td>
+            <td>@x.Total</td>
+            <td>@x.Date.ToString("dd/MM/yyyy")</td>
+            <td><a href="#" class="btn btn-default" class="btn btn-default" style="background-color:blue; color:white">Print</a></td>
+        </tr>
+    }
+</table>
+
+<a href="/Sale/Index" class="btn btn-info">Go Back</a>

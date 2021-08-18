@@ -1,0 +1,36 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model MvcOnlineCommercialAutomation.Models.Classes.SalesTransaction
+
+@{
+    ViewBag.Title = "AddSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>New Sale Page</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Product)
+    @Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Client)
+    @Html.DropDownListFor(x => x.ClientID, (List<SelectListItem>)ViewBag.vl2, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Employee)
+    @Html.DropDownListFor(x => x.EmployeeID, (List<SelectListItem>)ViewBag.vl3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Total)
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>
+
+
+

@@ -1,0 +1,27 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Employee
+
+@{
+    ViewBag.Title = "AddEmployee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>New Employee Page</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.EmployeeFirstName)
+    @Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EmployeeLastName)
+    @Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EmployeeImage)
+    @Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Department)
+    @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.empdp, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+</form>
+

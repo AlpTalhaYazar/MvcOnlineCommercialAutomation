@@ -1,0 +1,35 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.SalesTransaction
+
+@{
+    ViewBag.Title = "BringSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Sales Update Page</h2>
+<br />
+
+@using (Html.BeginForm("UpdateSale", "Sale", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.SaleID)
+    @Html.LabelFor(x => x.Product)
+    @Html.DropDownListFor(x => x.ProductID, (List<SelectListItem>)ViewBag.vl1, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Client)
+    @Html.DropDownListFor(x => x.ClientID, (List<SelectListItem>)ViewBag.vl2, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Employee)
+    @Html.DropDownListFor(x => x.EmployeeID, (List<SelectListItem>)ViewBag.vl3, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Total)
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Save</button>
+}
+

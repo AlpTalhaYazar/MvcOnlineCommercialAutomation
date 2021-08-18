@@ -1,0 +1,46 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<Invoince>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-striped" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Serial No</th>
+        <th>Item No</th>
+        <th>Tax Office</th>
+        <th>Date</th>
+        <th>Hour</th>
+        <th>Consigner</th>
+        <th>Recipient</th>
+        <th>Update</th>
+        <th>Details</th>
+        <th>Total</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.InvoinceID</td>
+            <td>@x.InvoinceSerialNo</td>
+            <td>@x.InvoinceItemNo</td>
+            <td>@x.TaxOffice</td>
+            <td>@x.Date.ToShortDateString()</td>
+            <td>@x.Hour</td>
+            <td>@x.Consigner</td>
+            <td>@x.Recipient</td>
+            <td>@x.Total</td>
+            <td>
+                <a href="/Invoince/BringInvoince/@x.InvoinceID" class="btn btn-warning">Update</a>
+            </td>
+            <td>
+                <a href="/Invoince/InvoinceDetail/@x.InvoinceID" class="btn btn-default" style="background-color:blue; color:white">Details</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Invoince/AddInvoince" class="btn btn-info">Add Invoince</a>
+
