@@ -21,7 +21,7 @@
         <tr>
             <td>@x.EmployeeID</td>
             <td>@x.EmployeeFirstName @x.EmployeeLastName</td>
-            <td>@x.EmployeeImage</td>
+            <td><img src="@x.EmployeeImage" style="height:50px; width:auto"></td>
             <td>@x.Department.DepartmentName</td>
             <td>
                 <a href="/Employee/BringEmployee/@x.EmployeeID" class="btn btn-warning">Update</a>
