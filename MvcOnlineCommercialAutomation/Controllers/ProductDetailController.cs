@@ -13,8 +13,12 @@ namespace MvcOnlineCommercialAutomation.Controllers
         Context con = new Context();
         public ActionResult Index()
         {
-            var vals1 = con.Products.Where(x => x.ProductID == 1).ToList();
-            return View(vals1);
+            Class1 cs = new Class1();
+            cs.Val1 = con.Products.Where(x => x.ProductID == 1).ToList();
+            cs.Val2 = con.Details.Where(x => x.DetailID == 1).ToList();
+
+            //var vals1 = con.Products.Where(x => x.ProductID == 1).ToList();
+            return View(cs);
         }
     }
 }
