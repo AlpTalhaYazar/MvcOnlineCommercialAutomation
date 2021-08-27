@@ -2841,6 +2841,7 @@
     <Content Include="Views\Gallery\Index.cshtml" />
     <Content Include="Views\ProductDetail\Index1.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
+    <Content Include="Views\Statistics\SimpleTables.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -26,12 +26,29 @@ namespace MvcOnlineCommercialAutomation.Controllers
             ViewBag.d10 = (con.Products.OrderBy(x => x.SalePrice)).Select(y => y.ProductName).FirstOrDefault().ToString();          //(from x in con.Products orderby x.SalePrice ascending select x.ProductName).FirstOrDefault().ToString();
             ViewBag.d11 = (con.Products.Count(x => x.ProductName.StartsWith("Refrigerator"))).ToString();
             ViewBag.d12 = (con.Products.Count(x => x.ProductName == "Laptop")).ToString();
-            //ViewBag.d13
+            ViewBag.d13 = con.Products.Where(x => x.ProductID == (con.SalesTransactions.GroupBy(y => y.ProductID).OrderByDescending(z => z.Count()).Select(a => a.Key).FirstOrDefault())).Select(b => b.ProductName).FirstOrDefault();
             ViewBag.d14 = (con.SalesTransactions.Sum(x => (int?)x.Total) ?? 0).ToString();
             ViewBag.d15 = con.SalesTransactions.Count(x => x.Date == DateTime.Today).ToString();
             ViewBag.d16 = ((con.SalesTransactions.Where(x => x.Date == DateTime.Today)).Sum(y => (int?)y.Total) ?? 0).ToString();
 
             return View();
         }
+
+        public ActionResult SimpleTables()
+        {
+            Class1 cs = new Class1();
+            cs.Val3 = con.Categories.ToList();
+
+            int CtgRatio(int id)
+            {
+                int ratio = (con.Products.Where(x => x.CategoryID == id).Sum(y => y.Stock)) / (con.Products.Sum(x => x.Stock));
+                return ratio;
+            }
+
+
+            return View(cs);
+        }        
+        
+        
     }
 }
