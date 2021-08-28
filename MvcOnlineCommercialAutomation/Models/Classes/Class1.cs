@@ -10,5 +10,7 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         public IEnumerable<Product> Val1 { get; set; }
         public IEnumerable<Detail> Val2 { get; set; }
         public IEnumerable<Category> Val3 { get; set; }
+        public IEnumerable<Client> Val4 { get; set; }
+
     }
 }

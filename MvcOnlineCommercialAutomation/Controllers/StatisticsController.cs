@@ -36,17 +36,18 @@ namespace MvcOnlineCommercialAutomation.Controllers
 
         public ActionResult SimpleTables()
         {
-            Class1 cs = new Class1();
-            cs.Val3 = con.Categories.ToList();
+            //Class1 cs = new Class1();
+            //cs.Val3 = con.Categories.ToList();
 
-            int CtgRatio(int id)
-            {
-                int ratio = (con.Products.Where(x => x.CategoryID == id).Sum(y => y.Stock)) / (con.Products.Sum(x => x.Stock));
-                return ratio;
-            }
-
-
-            return View(cs);
+            var vl1 = (from x in con.Clients
+                      group x by x.ClientCity into g
+                      select new ClassGroup
+                      {
+                          City = g.Key,
+                          Amount = g.Count()
+                      });
+            var vl2 = con.Clients.ToList();
+            return View((vl1.ToList(), vl2));
         }        
         
         
