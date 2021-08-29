@@ -146,7 +146,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Classes\Admin.cs" />
     <Compile Include="Models\Classes\Class1.cs" />
-    <Compile Include="Models\Classes\ClassGroup.cs" />
+    <Compile Include="Models\Classes\ClassGroup1.cs" />
+    <Compile Include="Models\Classes\ClassGroup4.cs" />
+    <Compile Include="Models\Classes\ClassGroup3.cs" />
+    <Compile Include="Models\Classes\ClassGroup2.cs" />
     <Compile Include="Models\Classes\Context.cs" />
     <Compile Include="Models\Classes\Detail.cs" />
     <Compile Include="Models\Classes\Expense.cs" />
@@ -2843,6 +2846,12 @@
     <Content Include="Views\ProductDetail\Index1.cshtml" />
     <Content Include="Views\ProductDetail\Index.cshtml" />
     <Content Include="Views\Statistics\SimpleTables.cshtml" />
+    <Content Include="Views\Statistics\Partial2.cshtml" />
+    <Content Include="Views\Statistics\Partial1.cshtml" />
+    <Content Include="Views\Statistics\Partial3.cshtml" />
+    <Content Include="Views\Statistics\Partial4.cshtml" />
+    <Content Include="Views\Statistics\Partial5.cshtml" />
+    <Content Include="Views\Statistics\Partial6.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

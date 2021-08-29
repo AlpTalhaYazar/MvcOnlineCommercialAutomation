@@ -36,20 +36,67 @@ namespace MvcOnlineCommercialAutomation.Controllers
 
         public ActionResult SimpleTables()
         {
-            //Class1 cs = new Class1();
-            //cs.Val3 = con.Categories.ToList();
+            return View();
+        }
 
-            var vl1 = (from x in con.Clients
-                      group x by x.ClientCity into g
-                      select new ClassGroup
-                      {
-                          City = g.Key,
-                          Amount = g.Count()
-                      });
-            var vl2 = con.Clients.ToList();
-            return View((vl1.ToList(), vl2));
-        }        
-        
-        
+        public PartialViewResult Partial1()
+        {
+            var vl1 = (from x in con.Products
+                       group x by x.Category into g
+                       select new ClassGroup1
+                       {
+                           Category = g.Key.CategoryName,
+                           Percent = g.Count()
+                       });
+            ViewBag.d1 = (con.Products.Count());
+            return PartialView(vl1.ToList());
+        }
+        public PartialViewResult Partial2()
+        {
+            var vl2 = (from x in con.Employees
+                       group x by x.Department into g
+                       select new ClassGroup2
+                       {
+                           Department = g.Key.DepartmentName,
+                           Percent = g.Count()
+                       });
+            ViewBag.d2 = (con.Employees.Count());
+            return PartialView(vl2.ToList());
+        }
+        public PartialViewResult Partial3()
+        {
+            var vl3 = (from x in con.Clients
+                       group x by x.ClientCity into g
+                       select new ClassGroup3
+                       {
+                           City = g.Key,
+                           Percent = g.Count()
+                       });
+            ViewBag.d3 = (con.Clients.Count());
+            return PartialView(vl3.ToList());
+        }
+        public PartialViewResult Partial4()
+        {
+            var vl4 = (from x in con.Products
+                       group x by x.Brand into g
+                       select new ClassGroup4
+                       {
+                           Brand = g.Key,
+                           Percent = g.Count()
+                       });
+            ViewBag.d4 = (con.Products.Count());
+            return PartialView(vl4.ToList());
+        }
+        public PartialViewResult Partial5()
+        {
+            var vl5 = con.Clients.ToList();
+            return PartialView(vl5);
+        }
+        public PartialViewResult Partial6()
+        {
+            var vl6 = con.Products.ToList();
+            return PartialView(vl6);
+        }
+
     }
 }

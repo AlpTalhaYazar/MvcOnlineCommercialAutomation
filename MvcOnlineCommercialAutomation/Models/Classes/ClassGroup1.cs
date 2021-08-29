@@ -5,9 +5,9 @@ using System.Web;
 
 namespace MvcOnlineCommercialAutomation.Models.Classes
 {
-    public class Class1
+    public class ClassGroup1
     {
-        public IEnumerable<Product> Val1 { get; set; }
-        public IEnumerable<Detail> Val2 { get; set; }
+        public string Category { get; set; }
+        public int Percent { get; set; }
     }
 }
