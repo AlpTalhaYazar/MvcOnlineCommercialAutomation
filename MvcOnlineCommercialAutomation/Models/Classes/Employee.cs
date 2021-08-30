@@ -12,14 +12,17 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         [Key]
         public int EmployeeID { get; set; }
 
+        [Display(Name = "Employee First Name")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string EmployeeFirstName { get; set; }
 
+        [Display(Name = "Employee Last Name")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string EmployeeLastName { get; set; }
 
+        [Display(Name = "Employee Image")]
         [Column(TypeName = "Varchar")]
         [StringLength(250)]
         public string EmployeeImage { get; set; }

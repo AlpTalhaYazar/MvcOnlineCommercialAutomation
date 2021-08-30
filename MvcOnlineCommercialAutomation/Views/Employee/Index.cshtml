@@ -8,7 +8,7 @@
 
 <table class="table table-striped" style="margin-top:20px">
     <tr>
-        <th>ID</th>
+        <th style="text-align:center">ID</th>
         <th>Name</th>
         <th>Image</th>
         <th>Department</th>
@@ -19,14 +19,14 @@
     @foreach (var x in Model)
     {
         <tr>
-            <td>@x.EmployeeID</td>
-            <td>@x.EmployeeFirstName @x.EmployeeLastName</td>
-            <td><img src="@x.EmployeeImage" style="height:50px; width:auto"></td>
-            <td>@x.Department.DepartmentName</td>
-            <td>
+            <td style="text-align: center; vertical-align: middle">@x.EmployeeID</td>
+            <td style="vertical-align:middle">@x.EmployeeFirstName @x.EmployeeLastName</td>
+            <td style="vertical-align:middle"><img src="@x.EmployeeImage" style="height:50px; width:auto"></td>
+            <td style="vertical-align:middle">@x.Department.DepartmentName</td>
+            <td style="vertical-align:middle">
                 <a href="/Employee/BringEmployee/@x.EmployeeID" class="btn btn-warning">Update</a>
             </td>
-            <td>
+            <td style="vertical-align:middle">
                 <a href="/Department/DepartmentEmployeeSale/@x.EmployeeID" class="btn btn-default" style="background-color:blue; color:white">Details</a>
             </td>
         </tr>

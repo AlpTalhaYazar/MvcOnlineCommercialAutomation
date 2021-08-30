@@ -12,6 +12,7 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         [Key]
         public int DepartmentID { get; set; }
 
+        [Display(Name = "Department Name")]
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string DepartmentName { get; set; }
