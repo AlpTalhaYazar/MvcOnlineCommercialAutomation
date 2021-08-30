@@ -64,5 +64,10 @@ namespace MvcOnlineCommercialAutomation.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult EmployeeList()
+        {
+            var e2 = con.Employees.ToList();
+            return View(e2);
+        }
     }
 }

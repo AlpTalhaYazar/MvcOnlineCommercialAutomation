@@ -19,5 +19,7 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         public DbSet<InvoinceItem> InvoinceItems { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<SalesTransaction> SalesTransactions { get; set; }
+        public DbSet<ToDo> ToDos { get; set; }
+
     }
 }
