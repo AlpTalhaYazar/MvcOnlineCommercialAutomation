@@ -33,6 +33,11 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         [StringLength(50)]
         public string ClientMail { get; set; }
 
+        [Display(Name = "Client Password")]
+        [Column(TypeName = "Varchar")]
+        [StringLength(20)]
+        public string ClientPassword { get; set; }
+
         public bool Status { get; set; }
 
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
