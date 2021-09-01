@@ -1,8 +1,34 @@
-﻿
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Client
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_ClientLayout.cshtml";
 }
 
-<h2>Index</h2>
+<br />
 
+<h2>Client Informations</h2>
+
+<br />
+
+@using (Html.BeginForm("Index2", "ClientPanel", FormMethod.Post))
+{
+    <table class="table table-hover">
+        <tr>
+            <td><label>Email address : @HttpContext.Current.User.Identity.Name</label></td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.ClientFirstName, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.ClientLastName, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.ClientCity, new { @class = "form-control" })</td>
+        </tr>
+        <tr>
+            <td>@Html.TextBoxFor(x => x.ClientPassword, new { @class = "form-control" })</td>
+        </tr>
+    </table>
+    <button class="btn btn-warning">Save Changes</button>
+}
