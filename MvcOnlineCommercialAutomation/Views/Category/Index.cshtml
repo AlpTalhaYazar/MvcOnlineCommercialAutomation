@@ -1,5 +1,7 @@
 ﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<Category>
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<Category>
 
 @{
     ViewBag.Title = "Index";
@@ -9,7 +11,6 @@
 <table class="table table-bordered" style="margin-top:20px">
 
     <tr>
-        <th>ID</th>
         <th>Category Name</th>
         <th>Delete</th>
         <th>Update</th>
@@ -19,9 +20,6 @@
     {
         <tr>
             <td>
-                @c.CategoryID
-            </td>
-            <td>
                 @c.CategoryName
             </td>
             <td><a href="/Category/DeleteCategory/@c.CategoryID" class="btn btn-danger">Delete</a></td>
@@ -30,5 +28,6 @@
     }
 
 </table>
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.TwitterBootstrapPagerAligned)
 
 <a href="/Category/AddCategory" class="btn btn-info">Add Category</a>

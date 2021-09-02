@@ -81,3 +81,7 @@ C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAut
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\EntityFramework.SqlServer.dll
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\EntityFramework.xml
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\EntityFramework.SqlServer.xml
+C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\PagedList.dll
+C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\PagedList.Mvc.dll
+C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\PagedList.xml
+C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\PagedList.Mvc.xml

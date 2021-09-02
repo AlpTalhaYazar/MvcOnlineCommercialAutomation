@@ -14,7 +14,6 @@
 </ol>
 <table class="table table-condensed">
     <tr>
-        <th>Sale ID</th>
         <th>Product</th>
         <th>Client</th>
         <th>Price</th>
@@ -26,12 +25,11 @@
     @foreach (var s in Model)
     {
         <tr>
-            <td>@s.SaleID</td>
             <td>@s.Product.ProductName</td>
             <td>@s.Client.ClientFirstName @s.Client.ClientLastName</td>
-            <td>@s.Price</td>
+            <td>@s.Price $</td>
             <td>@s.Amount</td>
-            <td>@s.Total</td>
+            <td>@s.Total $</td>
             <td>@s.Date.ToString("dd/MM/yyyy")</td>
         </tr>
     }

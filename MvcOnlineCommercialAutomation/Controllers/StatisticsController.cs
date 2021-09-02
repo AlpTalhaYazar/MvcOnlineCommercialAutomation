@@ -27,9 +27,9 @@ namespace MvcOnlineCommercialAutomation.Controllers
             ViewBag.d11 = (con.Products.Count(x => x.ProductName.StartsWith("Refrigerator"))).ToString();
             ViewBag.d12 = (con.Products.Count(x => x.ProductName == "Laptop")).ToString();
             ViewBag.d13 = con.Products.Where(x => x.ProductID == (con.SalesTransactions.GroupBy(y => y.ProductID).OrderByDescending(z => z.Count()).Select(a => a.Key).FirstOrDefault())).Select(b => b.ProductName).FirstOrDefault();
-            ViewBag.d14 = (con.SalesTransactions.Sum(x => (int?)x.Total) ?? 0).ToString();
+            ViewBag.d14 = (con.SalesTransactions.Sum(x => (decimal?)x.Total) ?? 0).ToString();
             ViewBag.d15 = con.SalesTransactions.Count(x => x.Date == DateTime.Today).ToString();
-            ViewBag.d16 = ((con.SalesTransactions.Where(x => x.Date == DateTime.Today)).Sum(y => (int?)y.Total) ?? 0).ToString();
+            ViewBag.d16 = ((con.SalesTransactions.Where(x => x.Date == DateTime.Today)).Sum(y => (decimal?)y.Total) ?? 0).ToString();
 
             return View();
         }

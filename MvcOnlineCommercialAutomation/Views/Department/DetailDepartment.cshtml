@@ -15,9 +15,7 @@
 </ol>
 <table class="table table-hover">
     <tr>
-        <th>Employee ID</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Employee</th>
         <th>Image</th>
         <th>Sales</th>
     </tr>
@@ -25,9 +23,7 @@
     @foreach (var e in Model)
     {
         <tr>
-            <td>@e.EmployeeID</td>
-            <td>@e.EmployeeFirstName</td>
-            <td>@e.EmployeeLastName</td>
+            <td>@e.EmployeeFirstName @e.EmployeeLastName</td>
             <td><img src="@e.EmployeeImage" style="height:50px; width:auto"></td>
             <td><a href="/Department/DepartmentEmployeeSale/@e.EmployeeID" class="btn btn-default" style="background-color:coral">Sales</a></td>
         </tr>

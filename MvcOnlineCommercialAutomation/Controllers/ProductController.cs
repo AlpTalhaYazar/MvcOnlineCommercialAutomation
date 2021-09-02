@@ -12,11 +12,15 @@ namespace MvcOnlineCommercialAutomation.Controllers
         // GET: Product
         Context con = new Context();
 
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            var Products = con.Products.Where(x => x.Status == true).ToList();
+            var Products = from x in con.Products select x;
+            if(!string.IsNullOrEmpty(p))
+            {
+                Products = Products.Where(y => y.ProductName.Contains(p));
+            }
 
-            return View(Products);
+            return View(Products.ToList());
         }
 
         [HttpGet]

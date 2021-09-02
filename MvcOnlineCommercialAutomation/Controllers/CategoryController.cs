@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcOnlineCommercialAutomation.Models.Classes;
+using PagedList;
+using PagedList.Mvc;
 
 namespace MvcOnlineCommercialAutomation.Controllers
 {
@@ -12,9 +14,9 @@ namespace MvcOnlineCommercialAutomation.Controllers
         // GET: Category
         Context con = new Context();
 
-        public ActionResult Index()
+        public ActionResult Index(int page = 1)
         {
-            var values = con.Categories.ToList();
+            var values = con.Categories.ToList().ToPagedList(page, 5);
             return View(values);
         }
 

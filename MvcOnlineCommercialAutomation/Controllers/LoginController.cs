@@ -50,5 +50,28 @@ namespace MvcOnlineCommercialAutomation.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
+
+        [HttpGet]
+        public ActionResult AdminLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AdminLogin(Admin aL)
+        {
+            var credential = con.Admins.FirstOrDefault(x => x.Username == aL.Username && x.Password == aL.Password);
+
+            if(credential != null)
+            {
+                FormsAuthentication.SetAuthCookie(credential.Username, false);
+                Session["Username"] = credential.Username.ToString();
+                return RedirectToAction("Index", "Category");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+        }
+
     }
 }
