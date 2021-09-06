@@ -9,7 +9,7 @@
 <h2>Product Update Page</h2>
 <br />
 
-@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post))
+@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.HiddenFor(x => x.ProductID)
     @Html.LabelFor(x => x.ProductName)
@@ -32,7 +32,8 @@
     @*@Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" })*@
     <br />
     @Html.LabelFor(x => x.ProductImage)
-    @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })*@
+    <input type="file" name="ProductImage" />
     <br />
     @Html.LabelFor(x => x.Status)
     @Html.TextBoxFor(x => x.Status, new { @class = "form-control" })

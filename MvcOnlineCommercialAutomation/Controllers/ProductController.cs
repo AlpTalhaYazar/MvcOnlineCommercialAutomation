@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -38,6 +39,15 @@ namespace MvcOnlineCommercialAutomation.Controllers
         [HttpPost]
         public ActionResult AddProduct(Product p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string fileName = Path.GetFileName(Request.Files[0].FileName);
+                string extens = Path.GetExtension(Request.Files[0].FileName);
+                string path = "~/Image/" + fileName + extens;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                p.ProductImage = "/Image/" + fileName + extens;
+            }
+
             con.Products.Add(p);
             con.SaveChanges();
             return RedirectToAction("Index");
@@ -66,6 +76,15 @@ namespace MvcOnlineCommercialAutomation.Controllers
         }
         public ActionResult UpdateProduct(Product p)
         {
+            if (Request.Files.Count > 0)
+            {
+                string fileName = Path.GetFileName(Request.Files[0].FileName);
+                string extens = Path.GetExtension(Request.Files[0].FileName);
+                string path = "~/Image/" + fileName + extens;
+                Request.Files[0].SaveAs(Server.MapPath(path));
+                p.ProductImage = "/Image/" + fileName + extens;
+            }
+
             var prd = con.Products.Find(p.ProductID);
             prd.ProductName = p.ProductName;
             prd.Brand = p.Brand;

@@ -9,7 +9,7 @@
 <h2>Employee Update Page</h2>
 <br />
 
-@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post, new { enctype="multipart/form-data" }))
 {
     @Html.HiddenFor(x => x.EmployeeID)
     @Html.LabelFor(x => x.EmployeeFirstName)
@@ -20,7 +20,8 @@
     @Html.TextBoxFor(x => x.EmployeeLastName, new { @class = "form-control" })
     <br />
     @Html.LabelFor(x => x.EmployeeImage)
-    @Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })
+    @*@Html.TextBoxFor(x => x.EmployeeImage, new { @class = "form-control" })*@
+    <input type="file" name="EmployeeImage" />
     <br />
     @Html.LabelFor(x => x.Department.DepartmentName)
     @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.empdp, new { @class = "form-control" })
