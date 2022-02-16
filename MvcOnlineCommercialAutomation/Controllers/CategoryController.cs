@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using MvcOnlineCommercialAutomation.Models.Classes;
+using PagedList;
 
 namespace MvcOnlineCommercialAutomation.Controllers
 {

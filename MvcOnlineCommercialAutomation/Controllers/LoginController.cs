@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
+using System.Web.Security;
 using MvcOnlineCommercialAutomation.Models.Classes;
 
 namespace MvcOnlineCommercialAutomation.Controllers
@@ -27,7 +29,6 @@ namespace MvcOnlineCommercialAutomation.Controllers
             return PartialView();
         }
 
-        /*
         [HttpGet]
         public ActionResult ClientLogin1()
         {
@@ -48,9 +49,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
-        */
 
-        /*
         [HttpGet]
         public ActionResult AdminLogin()
         {
@@ -72,6 +71,5 @@ namespace MvcOnlineCommercialAutomation.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
-        */
     }
 }
