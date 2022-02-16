@@ -1,14 +1,13 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<SalesTransaction>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.SalesTransaction>
 
 @{
     ViewBag.Title = "ClientPurchase";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<br />
+<br/>
 <h2>Client Purchases</h2>
-<br />
+<br/>
 
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Client Name : @ViewBag.clnm</li>
@@ -37,5 +36,3 @@
         </tr>
     }
 </table>
-
-

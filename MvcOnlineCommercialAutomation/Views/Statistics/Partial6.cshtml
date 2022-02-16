@@ -1,5 +1,4 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<Product>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.Product>
 
 <div class="row">
     <div class="col-12">
@@ -14,7 +13,9 @@
                         <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            <button type="submit" class="btn btn-default">
+                                <i class="fas fa-search"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -22,27 +23,27 @@
             <div class="card-body table-responsive p-0" style="height: 300px;">
                 <table class="table table-head-fixed text-nowrap">
                     <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Product Name</th>
-                            <th>Brand</th>
-                            <th>Stock</th>
-                            <th>Purchase Price</th>
-                            <th>Sale Price</th>
-                        </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Brand</th>
+                        <th>Stock</th>
+                        <th>Purchase Price</th>
+                        <th>Sale Price</th>
+                    </tr>
                     </thead>
                     <tbody>
-                        @foreach (var x in Model)
-                        {
-                            <tr>
-                                <td>@x.ProductID</td>
-                                <td>@x.ProductName</td>
-                                <td>@x.Brand</td>
-                                <td>@x.Stock</td>
-                                <td>@x.PurchasePrice</td>
-                                <td>@x.SalePrice</td>
-                            </tr>
-                        }
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+                            <td>@x.ProductID</td>
+                            <td>@x.ProductName</td>
+                            <td>@x.Brand</td>
+                            <td>@x.Stock</td>
+                            <td>@x.PurchasePrice</td>
+                            <td>@x.SalePrice</td>
+                        </tr>
+                    }
                     </tbody>
                 </table>
             </div>

@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using MvcOnlineCommercialAutomation.Controllers;
 
 namespace MvcOnlineCommercialAutomation.Models.Classes
 {
     public class ClientController : Controller
     {
         // GET: Client
-        Context con = new Context();
+        private readonly Context con = new Context();
 
         public ActionResult Index()
         {
@@ -23,6 +19,7 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult AddClient(Client cl)
         {
@@ -44,12 +41,10 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
             var client = con.Clients.Find(id);
             return View("BringClient", client);
         }
+
         public ActionResult UpdateClient(Client cl)
         {
-            if (!ModelState.IsValid)
-            {
-                return View("BringClient");
-            }
+            if (!ModelState.IsValid) return View("BringClient");
             var cli = con.Clients.Find(cl.ClientID);
             cli.ClientFirstName = cl.ClientFirstName;
             cli.ClientLastName = cl.ClientLastName;
@@ -63,7 +58,8 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         public ActionResult ClientPurchase(int id)
         {
             var vals2 = con.SalesTransactions.Where(x => x.ClientID == id).ToList();
-            ViewBag.clnm = con.Clients.Where(x => x.ClientID == id).Select(y => y.ClientFirstName + " " + y.ClientLastName).FirstOrDefault();
+            ViewBag.clnm = con.Clients.Where(x => x.ClientID == id)
+                .Select(y => y.ClientFirstName + " " + y.ClientLastName).FirstOrDefault();
             return View("ClientPurchase", vals2);
         }
     }

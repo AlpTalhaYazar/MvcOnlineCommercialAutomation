@@ -1,18 +1,16 @@
-﻿namespace MvcOnlineCommercialAutomation.Migrations
-{
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
+﻿using System.Data.Entity.Migrations;
+using MvcOnlineCommercialAutomation.Models.Classes;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MvcOnlineCommercialAutomation.Models.Classes.Context>
+namespace MvcOnlineCommercialAutomation.Migrations
+{
+    internal sealed class Configuration : DbMigrationsConfiguration<Context>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(MvcOnlineCommercialAutomation.Models.Classes.Context context)
+        protected override void Seed(Context context)
         {
             //  This method will be called after migrating to the latest version.
 

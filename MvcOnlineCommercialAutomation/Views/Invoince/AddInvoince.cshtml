@@ -5,32 +5,31 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<br />
+<br/>
 <h2>New Invoince Page</h2>
-<br />
+<br/>
 
 <form class="form-group" method="post">
     @Html.LabelFor(x => x.InvoinceSerialNo)
-    @Html.TextBoxFor(x => x.InvoinceSerialNo, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.InvoinceSerialNo, new {@class = "form-control"})
+    <br/>
     @Html.LabelFor(x => x.InvoinceItemNo)
-    @Html.TextBoxFor(x => x.InvoinceItemNo, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.InvoinceItemNo, new {@class = "form-control"})
+    <br/>
     @Html.LabelFor(x => x.TaxOffice)
-    @Html.TextBoxFor(x => x.TaxOffice, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.TaxOffice, new {@class = "form-control"})
+    <br/>
     @Html.LabelFor(x => x.Date)
-    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.Date, new {@class = "form-control"})
+    <br/>
     @Html.LabelFor(x => x.Hour)
-    @Html.TextBoxFor(x => x.Hour, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.Hour, new {@class = "form-control"})
+    <br/>
     @Html.LabelFor(x => x.Consigner)
-    @Html.TextBoxFor(x => x.Consigner, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.Consigner, new {@class = "form-control"})
+    <br/>
     @Html.LabelFor(x => x.Recipient)
-    @Html.TextBoxFor(x => x.Recipient, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.Recipient, new {@class = "form-control"})
+    <br/>
     <button class="btn btn-primary">Save</button>
 </form>
-

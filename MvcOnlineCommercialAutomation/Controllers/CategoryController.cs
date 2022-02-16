@@ -1,18 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using MvcOnlineCommercialAutomation.Models.Classes;
-using PagedList;
-using PagedList.Mvc;
 
 namespace MvcOnlineCommercialAutomation.Controllers
 {
     public class CategoryController : Controller
     {
         // GET: Category
-        Context con = new Context();
+        private readonly Context con = new Context();
 
         public ActionResult Index(int page = 1)
         {
@@ -25,6 +20,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult AddCategory(Category c)
         {
@@ -54,6 +50,5 @@ namespace MvcOnlineCommercialAutomation.Controllers
             con.SaveChanges();
             return RedirectToAction("Index");
         }
-
     }
 }

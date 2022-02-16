@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Security;
+﻿using System.Web.Mvc;
 using MvcOnlineCommercialAutomation.Models.Classes;
 
 namespace MvcOnlineCommercialAutomation.Controllers
@@ -11,7 +6,8 @@ namespace MvcOnlineCommercialAutomation.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        Context con = new Context();
+        private readonly Context con = new Context();
+
         public ActionResult Index()
         {
             return View();
@@ -22,6 +18,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
         {
             return PartialView();
         }
+
         [HttpPost]
         public ActionResult Partial1(Client cR)
         {
@@ -30,6 +27,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
             return PartialView();
         }
 
+        /*
         [HttpGet]
         public ActionResult ClientLogin1()
         {
@@ -50,7 +48,9 @@ namespace MvcOnlineCommercialAutomation.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
+        */
 
+        /*
         [HttpGet]
         public ActionResult AdminLogin()
         {
@@ -72,6 +72,6 @@ namespace MvcOnlineCommercialAutomation.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
-
+        */
     }
 }

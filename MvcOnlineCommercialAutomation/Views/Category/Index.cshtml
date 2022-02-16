@@ -1,14 +1,12 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@using PagedList
-@using PagedList.Mvc
-@model PagedList.IPagedList<Category>
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<MvcOnlineCommercialAutomation.Models.Classes.Category>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<table class="table table-bordered" style="margin-top:20px">
+<table class="table table-bordered" style="margin-top: 20px">
 
     <tr>
         <th>Category Name</th>
@@ -22,12 +20,16 @@
             <td>
                 @c.CategoryName
             </td>
-            <td><a href="/Category/DeleteCategory/@c.CategoryID" class="btn btn-danger">Delete</a></td>
-            <td><a href="/Category/BringCategory/@c.CategoryID" class="btn btn-warning">Update</a></td>
+            <td>
+                <a href="/Category/DeleteCategory/@c.CategoryID" class="btn btn-danger">Delete</a>
+            </td>
+            <td>
+                <a href="/Category/BringCategory/@c.CategoryID" class="btn btn-warning">Update</a>
+            </td>
         </tr>
     }
 
 </table>
-@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), PagedListRenderOptions.TwitterBootstrapPagerAligned)
+@Html.PagedListPager(Model, page => Url.Action("Index", new {page}), PagedListRenderOptions.TwitterBootstrapPagerAligned)
 
 <a href="/Category/AddCategory" class="btn btn-info">Add Category</a>

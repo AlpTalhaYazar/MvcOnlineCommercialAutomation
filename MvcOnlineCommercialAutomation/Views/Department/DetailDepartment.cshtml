@@ -1,14 +1,13 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<Employee>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.Employee>
 
 @{
     ViewBag.Title = "DetailDepartment";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<br />
+<br/>
 <h2>Department Detail Page</h2>
-<br />
+<br/>
 
 <ol class="breadcrumb mb-4">
     <li class="breadcrumb-item active">Department Name: @ViewBag.dptnm</li>
@@ -24,8 +23,12 @@
     {
         <tr>
             <td>@e.EmployeeFirstName @e.EmployeeLastName</td>
-            <td><img src="@e.EmployeeImage" style="height:50px; width:auto"></td>
-            <td><a href="/Department/DepartmentEmployeeSale/@e.EmployeeID" class="btn btn-default" style="background-color:coral">Sales</a></td>
+            <td>
+                <img src="@e.EmployeeImage" style="height: 50px; width: auto">
+            </td>
+            <td>
+                <a href="/Department/DepartmentEmployeeSale/@e.EmployeeID" class="btn btn-default" style="background-color: coral">Sales</a>
+            </td>
         </tr>
     }
 </table>

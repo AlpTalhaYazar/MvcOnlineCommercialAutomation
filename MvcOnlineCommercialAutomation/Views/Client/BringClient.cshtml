@@ -5,26 +5,25 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<br />
+<br/>
 <h2>Client Update Page</h2>
-<br />
+<br/>
 
 @using (Html.BeginForm("UpdateClient", "Client", FormMethod.Post))
 {
     @Html.HiddenFor(x => x.ClientID)
     @Html.LabelFor(x => x.ClientFirstName)
-    @Html.TextBoxFor(x => x.ClientFirstName, new { @class = "form-control" })
-    @Html.ValidationMessageFor(x => x.ClientFirstName, "", new { @style = "color:Red" })
-    <br />
+    @Html.TextBoxFor(x => x.ClientFirstName, new {@class = "form-control"})
+    @Html.ValidationMessageFor(x => x.ClientFirstName, "", new {style = "color:Red"})
+    <br/>
     @Html.LabelFor(x => x.ClientLastName)
-    @Html.TextBoxFor(x => x.ClientLastName, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.ClientLastName, new {@class = "form-control"})
+    <br/>
     @Html.LabelFor(x => x.ClientCity)
-    @Html.TextBoxFor(x => x.ClientCity, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.ClientCity, new {@class = "form-control"})
+    <br/>
     @Html.LabelFor(x => x.ClientMail)
-    @Html.TextBoxFor(x => x.ClientMail, new { @class = "form-control" })
-    <br />
+    @Html.TextBoxFor(x => x.ClientMail, new {@class = "form-control"})
+    <br/>
     <button class="btn btn-info">Save</button>
 }
-
