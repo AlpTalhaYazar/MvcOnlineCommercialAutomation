@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace MvcOnlineCommercialAutomation.Models.Classes
 {
     public class Invoince
     {
-        [Key]
-        public int InvoinceID { get; set; }
+        [Key] public int InvoinceID { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(6)]

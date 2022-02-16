@@ -1,14 +1,13 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<Invoince>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.Invoince>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<table class="table table-striped" style="margin-top:20px">
+<table class="table table-striped" style="margin-top: 20px">
     <tr>
-        <th style="text-align:center">Serial No - Item No</th>
+        <th style="text-align: center">Serial No - Item No</th>
         <th>Tax Office</th>
         <th>Date</th>
         <th>Hour</th>
@@ -34,13 +33,13 @@
                 <a href="/Invoince/BringInvoince/@x.InvoinceID" class="btn btn-warning">Update</a>
             </td>
             <td>
-                <a href="/Invoince/InvoinceDetail/@x.InvoinceID" class="btn btn-default" style="background-color:blue; color:white">Details</a>
+                <a href="/Invoince/InvoinceDetail/@x.InvoinceID" class="btn btn-default" style="background-color: blue; color: white">Details</a>
             </td>
             <td>
-                <a href="/Invoince/InvoinceDetail/@x.InvoinceID" class="btn btn-default" style="background-color:#c38d9e; color:white">Popup</a>
+                <a href="/Invoince/InvoinceDetail/@x.InvoinceID" class="btn btn-default" style="background-color: #c38d9e; color: white">Popup</a>
             </td>
             <td>
-                <a href="/Invoince/InvoinceDetail/@x.InvoinceID" class="btn btn-default" style="background-color:#41b3a3; color: white">Item</a>
+                <a href="/Invoince/InvoinceDetail/@x.InvoinceID" class="btn btn-default" style="background-color: #41b3a3; color: white">Item</a>
             </td>
         </tr>
     }
@@ -48,8 +47,8 @@
 
 <a href="/Invoince/AddInvoince" class="btn btn-info">Add Invoince</a>
 
-<br />
-<br />
+<br/>
+<br/>
 
 <button type="button" class="btn" style="background-color: #41b3a3; color: white" data-toggle="modal" data-target="#modal1">Popup Window</button>
 
@@ -80,4 +79,3 @@
         </div>
     </div>
 </div>
-

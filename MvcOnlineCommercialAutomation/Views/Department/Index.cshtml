@@ -1,12 +1,11 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<Department>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.Department>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<table class="table table-bordered" style="margin-top:20px">
+<table class="table table-bordered" style="margin-top: 20px">
     <tr>
         <th>ID</th>
         <th>Department Name</th>
@@ -30,7 +29,7 @@
                 <a href="/Department/BringDepartment/@d.DepartmentID" class="btn btn-warning">Update</a>
             </td>
             <td>
-                <a href="/Department/DetailDepartment/@d.DepartmentID" class="btn btn-default" style="background-color:blue; color:white">Details</a>
+                <a href="/Department/DetailDepartment/@d.DepartmentID" class="btn btn-default" style="background-color: blue; color: white">Details</a>
             </td>
         </tr>
     }

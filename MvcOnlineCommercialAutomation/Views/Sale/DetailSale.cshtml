@@ -1,15 +1,14 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<SalesTransaction>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.SalesTransaction>
 
 @{
     ViewBag.Title = "DetailSale";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
+<br/>
 <h2>Sale Detail Page</h2>
-<br />
+<br/>
 
-<table class="table table-striped" style="margin-top:20px">
+<table class="table table-striped" style="margin-top: 20px">
     <tr>
         <th>ID</th>
         <th>Product</th>
@@ -32,7 +31,9 @@
             <td>@x.Price</td>
             <td>@x.Total</td>
             <td>@x.Date.ToString("dd/MM/yyyy")</td>
-            <td><a href="#" class="btn btn-default" class="btn btn-default" style="background-color:blue; color:white">Print</a></td>
+            <td>
+                <a href="#" class="btn btn-default" class="btn btn-default" style="background-color: blue; color: white">Print</a>
+            </td>
         </tr>
     }
 </table>

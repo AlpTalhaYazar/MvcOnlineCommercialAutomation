@@ -1,12 +1,10 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-
-@model List<Product>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.Product>
 
 @{
     Layout = null;
 }
 
-<br />
+<br/>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -20,61 +18,61 @@
 </head>
 
 <body>
-    <table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
-        <thead>
-            <tr>
-                <th>Product Id</th>
-                <th>Product</th>
-                <th>Brand</th>
-                <th>Stock</th>
-                <th>Purchase Price</th>
-                <th>Sale Price</th>
-                <th>Status</th>
-                <th>Category</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var x in Model)
+<table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="width: 100%">
+    <thead>
+    <tr>
+        <th>Product Id</th>
+        <th>Product</th>
+        <th>Brand</th>
+        <th>Stock</th>
+        <th>Purchase Price</th>
+        <th>Sale Price</th>
+        <th>Status</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ProductID</td>
+            <td>@x.ProductName</td>
+            <td>@x.Brand</td>
+            <td>@x.Stock</td>
+            <td>@x.PurchasePrice</td>
+            <td>@x.SalePrice</td>
+            <td>@x.Status</td>
+            <td>@x.Category.CategoryName</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        var table = $('#example').DataTable(
             {
-                <tr>
-                    <td>@x.ProductID</td>
-                    <td>@x.ProductName</td>
-                    <td>@x.Brand</td>
-                    <td>@x.Stock</td>
-                    <td>@x.PurchasePrice</td>
-                    <td>@x.SalePrice</td>
-                    <td>@x.Status</td>
-                    <td>@x.Category.CategoryName</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                lengthChange: false,
+                buttons: ['copy', 'excel', 'csv', 'pdf', 'colvis']
+            });
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.bootstrap4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.3/js/responsive.bootstrap4.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            var table = $('#example').DataTable(
-                {
-                    lengthChange: false,
-                    buttons: ['copy', 'excel', 'csv', 'pdf', 'colvis']
-                });
-
-            table.buttons().container()
-                .appendTo('#example_wrapper .col-md-6:eq(0)');
-        });
-    </script>
+        table.buttons().container()
+            .appendTo('#example_wrapper .col-md-6:eq(0)');
+    });
+</script>
 </body>
 </html>

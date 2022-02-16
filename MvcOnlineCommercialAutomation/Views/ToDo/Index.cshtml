@@ -1,12 +1,11 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<ToDo>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.ToDo>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<br />
+<br/>
 
 <!DOCTYPE html>
 <html>
@@ -42,161 +41,169 @@
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-    <div class="wrapper">
-        <!-- Main Sidebar Container -->
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
-                <!-- Small boxes (Stat box) -->
-                <div class="row">
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>@ViewBag.d1</h3>
+<div class="wrapper">
+    <!-- Main Sidebar Container -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>@ViewBag.d1</h3>
 
-                                <p>Number of Clients</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-person"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            <p>Number of Clients</p>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>@ViewBag.d4</h3>
-
-                                <p>Client cities</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-map"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <div class="icon">
+                            <i class="ion ion-person"></i>
                         </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>@ViewBag.d2</h3>
-
-                                <p>Total Product Amount</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-bag"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>@ViewBag.d3</h3>
-
-                                <p>Number of Categories</p>
-                            </div>
-                            <div class="icon">
-                                <i class="ion ion-pie-graph"></i>
-                            </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-                        </div>
-                    </div>
-                    <!-- ./col -->
                 </div>
-                <!-- /.row -->
-                <!-- Main row -->
-                <div class="row">
-                    <!-- Left col -->
-                    <section class="col-lg-7 connectedSortable">
-                        <!-- TO DO List -->
-                        <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title">
-                                    <i class="ion ion-clipboard mr-1"></i>
-                                    To Do List
-                                </h3>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>@ViewBag.d4</h3>
 
-                                <div class="card-tools">
-                                    <ul class="pagination pagination-sm">
-                                        <li class="page-item"><a href="#" class="page-link">&laquo;</a></li>
-                                        <li class="page-item"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item"><a href="#" class="page-link">2</a></li>
-                                        <li class="page-item"><a href="#" class="page-link">3</a></li>
-                                        <li class="page-item"><a href="#" class="page-link">&raquo;</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <ul class="todo-list" data-widget="todo-list">
-                                    @foreach (var x in Model)
-                                    {
-                                        <li>
-                                            <!-- drag handle -->
-                                            <span class="handle">
-                                                <i class="fas fa-ellipsis-v"></i>
-                                                <i class="fas fa-ellipsis-v"></i>
-                                            </span>
-                                            <!-- checkbox -->
-                                            <div class="icheck-primary d-inline ml-2">
-                                                <input type="checkbox" @(x.Status ? "checked=\"checked\"" : "")  name="todo@(x.ToDoID)" id="todoCheck@(x.ToDoID)">
-                                                <label for="todoCheck@(x.ToDoID)"></label>
-                                            </div>
-                                            <!-- todo text -->
-                                            <span class="text">@x.Title</span>
-                                            <!-- Emphasis label -->
-                                            @*<small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>*@
-                                            <!-- General tools such as edit or delete-->
-                                            <div class="tools">
-                                                <i class="fas fa-edit"></i>
-                                                <i class="fas fa-trash-o"></i>
-                                            </div>
-                                        </li>
+                            <p>Client cities</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-map"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3>@ViewBag.d2</h3>
 
-                                    }
+                            <p>Total Product Amount</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                        <div class="inner">
+                            <h3>@ViewBag.d3</h3>
+
+                            <p>Number of Categories</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-pie-graph"></i>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-7 connectedSortable">
+                    <!-- TO DO List -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">
+                                <i class="ion ion-clipboard mr-1"></i>
+                                To Do List
+                            </h3>
+
+                            <div class="card-tools">
+                                <ul class="pagination pagination-sm">
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">&laquo;</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">2</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a href="#" class="page-link">&raquo;</a>
+                                    </li>
                                 </ul>
                             </div>
-                            <!-- /.card-body -->
-                            <div class="card-footer clearfix">
-                                <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
-                            </div>
                         </div>
-                        <!-- /.card -->
-                    </section>
-                    <!-- /.Left col -->
-                </div>
-                <!-- /.row (main row) -->
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <ul class="todo-list" data-widget="todo-list">
+                                @foreach (var x in Model)
+                                {
+                                    <li>
+                                        <!-- drag handle -->
+                                        <span class="handle">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </span>
+                                        <!-- checkbox -->
+                                        <div class="icheck-primary d-inline ml-2">
+                                            <input type="checkbox" @(x.Status ? "checked=\"checked\"" : "") name="todo@(x.ToDoID)" id="todoCheck@(x.ToDoID)">
+                                            <label for="todoCheck@(x.ToDoID)"></label>
+                                        </div>
+                                        <!-- todo text -->
+                                        <span class="text">@x.Title</span>
+                                        <!-- Emphasis label -->
+                                        @*<small class="badge badge-danger"><i class="far fa-clock"></i> 2 mins</small>*@
+                                        <!-- General tools such as edit or delete-->
+                                        <div class="tools">
+                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-trash-o"></i>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer clearfix">
+                            <button type="button" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </section>
+                <!-- /.Left col -->
             </div>
-            <!-- /.container-fluid -->
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- ./wrapper -->
-    <!-- jQuery -->
-    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="~/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>$.widget.bridge('uibutton', $.ui.button)</script>
-    <!-- Bootstrap 4 -->
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- Summernote -->
-    <script src="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="~/AdminLTE-3.0.4/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+            <!-- /.row (main row) -->
+        </div>
+        <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- ./wrapper -->
+<!-- jQuery -->
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="~/AdminLTE-3.0.4/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>$.widget.bridge('uibutton', $.ui.button)</script>
+<!-- Bootstrap 4 -->
+<script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Summernote -->
+<script src="~/AdminLTE-3.0.4/plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="~/AdminLTE-3.0.4/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 </body>
 </html>
-

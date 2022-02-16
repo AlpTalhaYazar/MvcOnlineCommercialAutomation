@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using MvcOnlineCommercialAutomation.Models.Classes;
 
@@ -10,7 +7,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
     public class GalleryController : Controller
     {
         // GET: Gallery
-        Context con = new Context();
+        private readonly Context con = new Context();
 
         public ActionResult Index()
         {

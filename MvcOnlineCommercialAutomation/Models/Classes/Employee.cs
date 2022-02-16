@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Web;
 
 namespace MvcOnlineCommercialAutomation.Models.Classes
 {
     public class Employee
     {
-        [Key]
-        public int EmployeeID { get; set; }
+        [Key] public int EmployeeID { get; set; }
 
         [Display(Name = "Employee First Name")]
         [Column(TypeName = "Varchar")]

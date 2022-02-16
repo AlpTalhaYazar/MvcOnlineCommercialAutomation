@@ -5,29 +5,31 @@
     Layout = "~/Views/Shared/_ClientLayout.cshtml";
 }
 
-<br />
+<br/>
 
 <h2>Client Informations</h2>
 
-<br />
+<br/>
 
 @using (Html.BeginForm("Index2", "ClientPanel", FormMethod.Post))
 {
     <table class="table table-hover">
         <tr>
-            <td><label>Email address : @HttpContext.Current.User.Identity.Name</label></td>
+            <td>
+                <label>Email address : @HttpContext.Current.User.Identity.Name</label>
+            </td>
         </tr>
         <tr>
-            <td>@Html.TextBoxFor(x => x.ClientFirstName, new { @class = "form-control" })</td>
+            <td>@Html.TextBoxFor(x => x.ClientFirstName, new {@class = "form-control"})</td>
         </tr>
         <tr>
-            <td>@Html.TextBoxFor(x => x.ClientLastName, new { @class = "form-control" })</td>
+            <td>@Html.TextBoxFor(x => x.ClientLastName, new {@class = "form-control"})</td>
         </tr>
         <tr>
-            <td>@Html.TextBoxFor(x => x.ClientCity, new { @class = "form-control" })</td>
+            <td>@Html.TextBoxFor(x => x.ClientCity, new {@class = "form-control"})</td>
         </tr>
         <tr>
-            <td>@Html.TextBoxFor(x => x.ClientPassword, new { @class = "form-control" })</td>
+            <td>@Html.TextBoxFor(x => x.ClientPassword, new {@class = "form-control"})</td>
         </tr>
     </table>
     <button class="btn btn-warning">Save Changes</button>

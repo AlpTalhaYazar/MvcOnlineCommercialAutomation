@@ -7,67 +7,80 @@
     <div class="card-body p-0">
         <table class="table table-sm">
             <thead>
-                <tr>
-                    <th style="width: 10px">#</th>
-                    <th>Task</th>
-                    <th>Progress</th>
-                    <th style="width: 40px">Label</th>
-                </tr>
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>Task</th>
+                <th>Progress</th>
+                <th style="width: 40px">Label</th>
+            </tr>
             </thead>
             <tbody>
-                @{ int DepartmentNo = 0; }
-                @foreach (var x in Model)
-                {
-                    <tr>
-                        <td>@{DepartmentNo++;}@DepartmentNo.</td>
-                        <td>@x.Department</td>
-                        @if ((((x.Percent) * 100) / (ViewBag.d2)) > 0 && (((x.Percent) * 100) / (ViewBag.d2)) <= 20)
-                        {
-                            <td style="vertical-align:middle">
-                                <div class="progress progress-xs">
-                                    <div class="progress-bar" style="background-color: #82c272; width:@(((x.Percent) * 100) / (ViewBag.d2))%"></div>
-                                </div>
-                            </td>
-                            <td style="text-align:center"><span class="badge" style="color: white; background-color: #82c272">@(((x.Percent) * 100) / (ViewBag.d2))%</span></td>
-                        }
-                        @if ((((x.Percent) * 100) / (ViewBag.d2)) > 20 && (((x.Percent) * 100) / (ViewBag.d2)) <= 40)
-                        {
-                            <td style="vertical-align:middle">
-                                <div class="progress progress-xs">
-                                    <div class="progress-bar" style="background-color: #00a88f; width: @(((x.Percent) * 100) / (ViewBag.d2))%"></div>
-                                </div>
-                            </td>
-                            <td style="text-align:center"><span class="badge" style="color: white; background-color: #00a88f">@(((x.Percent) * 100) / (ViewBag.d2))%</span></td>
-                        }
-                        @if ((((x.Percent) * 100) / (ViewBag.d2)) > 40 && (((x.Percent) * 100) / (ViewBag.d2)) <= 60)
-                        {
-                            <td style="vertical-align:middle">
-                                <div class="progress progress-xs">
-                                    <div class="progress-bar progress-bar-danger" style="background-color: #0087ac; width: @(((x.Percent) * 100) / (ViewBag.d2))%"></div>
-                                </div>
-                            </td>
-                            <td style="text-align:center"><span class="badge" style="color: white; background-color: #0087ac">@(((x.Percent) * 100) / (ViewBag.d2))%</span></td>
-                        }
-                        @if ((((x.Percent) * 100) / (ViewBag.d2)) > 60 && (((x.Percent) * 100) / (ViewBag.d2)) <= 80)
-                        {
-                            <td style="vertical-align:middle">
-                                <div class="progress progress-xs">
-                                    <div class="progress-bar progress-bar-danger" style="background-color: #005faa; width: @(((x.Percent) * 100) / (ViewBag.d2))%"></div>
-                                </div>
-                            </td>
-                            <td style="text-align:center"><span class="badge" style="color: white; background-color: #005faa">@(((x.Percent) * 100) / (ViewBag.d2))%</span></td>
-                        }
-                        @if ((((x.Percent) * 100) / (ViewBag.d2)) > 80 && (((x.Percent) * 100) / (ViewBag.d2)) <= 100)
-                        {
-                            <td style="vertical-align:middle">
-                                <div class="progress progress-xs">
-                                    <div class="progress-bar progress-bar-danger" style="background-color: #323b81; width: @(((x.Percent) * 100) / (ViewBag.d2))%"></div>
-                                </div>
-                            </td>
-                            <td style="text-align:center"><span class="badge" style="color: white; background-color: #323b81">@(((x.Percent) * 100) / (ViewBag.d2))%</span></td>
-                        }
-                    </tr>
-                }
+            @{ var DepartmentNo = 0; }
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>
+                        @{ DepartmentNo++; }
+                        @DepartmentNo.
+                    </td>
+                    <td>@x.Department</td>
+                    @if (x.Percent * 100 / ViewBag.d2 > 0 && x.Percent * 100 / ViewBag.d2 <= 20)
+                    {
+                        <td style="vertical-align: middle">
+                            <div class="progress progress-xs">
+                                <div class="progress-bar" style="background-color: #82c272; width: @(x.Percent * 100 / ViewBag.d2)%"></div>
+                            </div>
+                        </td>
+                        <td style="text-align: center">
+                            <span class="badge" style="background-color: #82c272; color: white;">@(x.Percent * 100 / ViewBag.d2)%</span>
+                        </td>
+                    }
+                    @if (x.Percent * 100 / ViewBag.d2 > 20 && x.Percent * 100 / ViewBag.d2 <= 40)
+                    {
+                        <td style="vertical-align: middle">
+                            <div class="progress progress-xs">
+                                <div class="progress-bar" style="background-color: #00a88f; width: @(x.Percent * 100 / ViewBag.d2)%"></div>
+                            </div>
+                        </td>
+                        <td style="text-align: center">
+                            <span class="badge" style="background-color: #00a88f; color: white;">@(x.Percent * 100 / ViewBag.d2)%</span>
+                        </td>
+                    }
+                    @if (x.Percent * 100 / ViewBag.d2 > 40 && x.Percent * 100 / ViewBag.d2 <= 60)
+                    {
+                        <td style="vertical-align: middle">
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="background-color: #0087ac; width: @(x.Percent * 100 / ViewBag.d2)%"></div>
+                            </div>
+                        </td>
+                        <td style="text-align: center">
+                            <span class="badge" style="background-color: #0087ac; color: white;">@(x.Percent * 100 / ViewBag.d2)%</span>
+                        </td>
+                    }
+                    @if (x.Percent * 100 / ViewBag.d2 > 60 && x.Percent * 100 / ViewBag.d2 <= 80)
+                    {
+                        <td style="vertical-align: middle">
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="background-color: #005faa; width: @(x.Percent * 100 / ViewBag.d2)%"></div>
+                            </div>
+                        </td>
+                        <td style="text-align: center">
+                            <span class="badge" style="background-color: #005faa; color: white;">@(x.Percent * 100 / ViewBag.d2)%</span>
+                        </td>
+                    }
+                    @if (x.Percent * 100 / ViewBag.d2 > 80 && x.Percent * 100 / ViewBag.d2 <= 100)
+                    {
+                        <td style="vertical-align: middle">
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="background-color: #323b81; width: @(x.Percent * 100 / ViewBag.d2)%"></div>
+                            </div>
+                        </td>
+                        <td style="text-align: center">
+                            <span class="badge" style="background-color: #323b81; color: white;">@(x.Percent * 100 / ViewBag.d2)%</span>
+                        </td>
+                    }
+                </tr>
+            }
             </tbody>
         </table>
     </div>

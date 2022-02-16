@@ -5,26 +5,26 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<br />
+<br/>
 <h2>New Employee Page</h2>
-<br />
+<br/>
 
-@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("AddEmployee", "Employee", FormMethod.Post, new {enctype = "multipart/form-data"}))
 {
     <form class="form-group" method="post">
         @Html.LabelFor(x => x.EmployeeFirstName)
-        @Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })
-        <br />
+        @Html.TextBoxFor(x => x.EmployeeFirstName, new {@class = "form-control"})
+        <br/>
         @Html.LabelFor(x => x.EmployeeLastName)
-        @Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })
-        <br />
+        @Html.TextBoxFor(x => x.EmployeeFirstName, new {@class = "form-control"})
+        <br/>
         @Html.LabelFor(x => x.EmployeeImage)
         @*@Html.TextBoxFor(x => x.EmployeeFirstName, new { @class = "form-control" })*@
-        <input type="file" name="EmployeeImage" />
-        <br />
+        <input type="file" name="EmployeeImage"/>
+        <br/>
         @Html.LabelFor(x => x.Department)
-        @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>)ViewBag.empdp, new { @class = "form-control" })
-        <br />
+        @Html.DropDownListFor(x => x.DepartmentID, (List<SelectListItem>) ViewBag.empdp, new {@class = "form-control"})
+        <br/>
         <button class="btn btn-info">Save</button>
     </form>
 }

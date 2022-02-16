@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using MvcOnlineCommercialAutomation.Models.Classes;
 
@@ -10,7 +7,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
     public class InvoinceController : Controller
     {
         // GET: Invoince
-        Context con = new Context();
+        private readonly Context con = new Context();
 
         public ActionResult Index()
         {
@@ -23,6 +20,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult AddInvoince(Invoince i)
         {
@@ -36,6 +34,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
             var vals2 = con.Invoinces.Find(id);
             return View("BringInvoince", vals2);
         }
+
         public ActionResult UpdateInvoince(Invoince i)
         {
             var val1 = con.Invoinces.Find(i.InvoinceID);
@@ -63,6 +62,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult AddInvoinceItem(InvoinceItem i)
         {

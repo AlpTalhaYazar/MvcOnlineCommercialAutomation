@@ -1,5 +1,4 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model IEnumerable<MvcOnlineCommercialAutomation.Models.Classes.ClassGroup1>
+﻿@model IEnumerable<MvcOnlineCommercialAutomation.Models.Classes.ClassGroup1>
 
 @{
     ViewBag.Title = "SimpleTables";
@@ -24,69 +23,67 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">
-        <!-- Navbar -->
-        <!-- /.navbar -->
-        <!-- Main Sidebar Container -->
-        <!-- Content Wrapper. Contains page content -->
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>Simple Tables</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Simple Tables</li>
-                        </ol>
-                    </div>
+<div class="wrapper">
+    <!-- Navbar -->
+    <!-- /.navbar -->
+    <!-- Main Sidebar Container -->
+    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Simple Tables</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active">Simple Tables</li>
+                    </ol>
                 </div>
             </div>
-        </section>
-        <section class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
 
-                        @Html.Action("Partial1", "Statistics")
+                    @Html.Action("Partial1", "Statistics")
 
-                        @Html.Action("Partial2", "Statistics")
+                    @Html.Action("Partial2", "Statistics")
 
-                    </div>
-                    <div class="col-md-6">
-
-                        @Html.Action("Partial3", "Statistics")
-
-                        @Html.Action("Partial4", "Statistics")
-
-                    </div>
                 </div>
+                <div class="col-md-6">
 
-                @Html.Action("Partial5", "Statistics")
+                    @Html.Action("Partial3", "Statistics")
 
-                @Html.Action("Partial6", "Statistics")
+                    @Html.Action("Partial4", "Statistics")
+
+                </div>
             </div>
-        </section>
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
-    <!-- jQuery -->
-    <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+
+            @Html.Action("Partial5", "Statistics")
+
+            @Html.Action("Partial6", "Statistics")
+        </div>
+    </section>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+<!-- jQuery -->
+<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="~/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="~/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
 </body>
 </html>
-
-
-
-

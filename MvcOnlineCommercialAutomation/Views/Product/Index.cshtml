@@ -1,21 +1,20 @@
-﻿@using MvcOnlineCommercialAutomation.Models.Classes
-@model List<Product>
+﻿@model List<MvcOnlineCommercialAutomation.Models.Classes.Product>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
+<br/>
 
 @using (Html.BeginForm("Index", "Product", FormMethod.Get))
 {
     <p>
         Product Name : @Html.TextBox("p")
-        <input type="submit" value="Search" />
+        <input type="submit" value="Search"/>
     </p>
 }
 
-<br />
+<br/>
 <table class="table table-bordered">
     <tr>
         <th>Product</th>
@@ -38,9 +37,15 @@
             <td>@p.PurchasePrice $</td>
             <td>@p.SalePrice $</td>
             <td>@p.Category.CategoryName</td>
-            <td><a href="/Product/DeleteProduct/@p.ProductID" class="btn btn-danger">Delete</a></td>
-            <td><a href="/Product/BringProduct/@p.ProductID" class="btn btn-warning">Update</a></td>
-            <td><a href="/Product/MakeSale/@p.ProductID" class="btn btn-default" style="background-color:aqua">Sale</a></td>
+            <td>
+                <a href="/Product/DeleteProduct/@p.ProductID" class="btn btn-danger">Delete</a>
+            </td>
+            <td>
+                <a href="/Product/BringProduct/@p.ProductID" class="btn btn-warning">Update</a>
+            </td>
+            <td>
+                <a href="/Product/MakeSale/@p.ProductID" class="btn btn-default" style="background-color: aqua">Sale</a>
+            </td>
         </tr>
     }
 </table>

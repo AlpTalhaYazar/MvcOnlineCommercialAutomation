@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 
 namespace MvcOnlineCommercialAutomation.Models.Classes
 {
@@ -20,6 +16,5 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         public DbSet<Product> Products { get; set; }
         public DbSet<SalesTransaction> SalesTransactions { get; set; }
         public DbSet<ToDo> ToDos { get; set; }
-
     }
 }

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
@@ -8,40 +7,40 @@
 <script src="~/Scripts/jquery-3.4.1.js"></script>
 
 
-<br />
-<br />
+<br/>
+<br/>
 <button class="btn btn-primary" id="btn1">Button1</button>
 <button class="btn btn-primary" id="btn2">Button2</button>
 <button class="btn btn-primary" id="btn3">Button3</button>
 <button class="btn btn-primary" id="btn4">Button4</button>
-<br />
-<br />
+<br/>
+<br/>
 <button class="btn btn-primary" id="btn5">Button5</button>
 <button class="btn btn-primary" id="btn6">Button6</button>
 <button class="btn btn-primary" id="btn7">Button7</button>
 <button class="btn btn-primary" id="btn8">Button8</button>
-<br />
-<br />
+<br/>
+<br/>
 <button class="btn btn-primary" id="btn9">Button9</button>
 <button class="btn btn-primary" id="btn10">Button10</button>
 
 <script>
-    $('#btn1').click(function () {
+    $('#btn1').click(function() {
         swal("Hello world!");
     });
 </script>
 <script>
-    $('#btn2').click(function () {
+    $('#btn2').click(function() {
         swal("Here's the title!", "...and here's the text!");
     });
 </script>
 <script>
-    $('#btn3').click(function () {
+    $('#btn3').click(function() {
         swal("Good job!", "You clicked the button!", "success");
     });
 </script>
 <script>
-    $('#btn4').click(function () {
+    $('#btn4').click(function() {
         swal({
             title: "Good job!",
             text: "You clicked the button!",
@@ -50,7 +49,7 @@
     });
 </script>
 <script>
-    $('#btn5').click(function () {
+    $('#btn5').click(function() {
         swal({
             title: "Good job!",
             text: "You clicked the button!",
@@ -60,14 +59,17 @@
     });
 </script>
 <script>
-    $('#btn6').click(function () {
-        swal("Good job!", "You clicked the button!", "success", {
-            button: "Aww yiss!",
-        });
+    $('#btn6').click(function() {
+        swal("Good job!",
+            "You clicked the button!",
+            "success",
+            {
+                button: "Aww yiss!",
+            });
     });
 </script>
 <script>
-    $('#btn7').click(function () {
+    $('#btn7').click(function() {
         swal("Click on either the button or outside the modal.")
             .then((value) => {
                 swal(`The returned value is: ${value}`);
@@ -75,19 +77,20 @@
     });
 </script>
 <script>
-    $('#btn8').click(function () {
+    $('#btn8').click(function() {
         swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        })
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this imaginary file!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
             .then((willDelete) => {
                 if (willDelete) {
-                    swal("Poof! Your imaginary file has been deleted!", {
-                        icon: "success",
-                    });
+                    swal("Poof! Your imaginary file has been deleted!",
+                        {
+                            icon: "success",
+                        });
                 } else {
                     swal("Your imaginary file is safe!");
                 }
@@ -95,17 +98,18 @@
     });
 </script>
 <script>
-    $('#btn9').click(function () {
-        swal("Are you sure you want to do this?", {
-            buttons: ["Oh noez!", "Aww yiss!"],
-        });
+    $('#btn9').click(function() {
+        swal("Are you sure you want to do this?",
+            {
+                buttons: ["Oh noez!", "Aww yiss!"],
+            });
     });
 </script>
 <script>
-    $('#btn10').click(function () {
-        swal("Are you sure you want to do this?", {
-            buttons: ["Oh noez!", true],
-        });
+    $('#btn10').click(function() {
+        swal("Are you sure you want to do this?",
+            {
+                buttons: ["Oh noez!", true],
+            });
     });
 </script>
-

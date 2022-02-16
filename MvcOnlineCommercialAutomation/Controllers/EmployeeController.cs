@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using MvcOnlineCommercialAutomation.Models.Classes;
 
@@ -11,7 +8,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
-        Context con = new Context();
+        private readonly Context con = new Context();
 
         public ActionResult Index()
         {
@@ -22,26 +19,28 @@ namespace MvcOnlineCommercialAutomation.Controllers
         [HttpGet]
         public ActionResult AddEmployee()
         {
-            List<SelectListItem> val1 = (from x in con.Departments.ToList()
-                                         select new SelectListItem
-                                         {
-                                             Text = x.DepartmentName,
-                                             Value = x.DepartmentID.ToString()
-                                         }).ToList();
+            var val1 = (from x in con.Departments.ToList()
+                select new SelectListItem
+                {
+                    Text = x.DepartmentName,
+                    Value = x.DepartmentID.ToString()
+                }).ToList();
             ViewBag.empdp = val1;
             return View();
         }
+
         [HttpPost]
         public ActionResult AddEmployee(Employee emp)
         {
-            if(Request.Files.Count > 0)
+            if (Request.Files.Count > 0)
             {
-                string fileName = Path.GetFileName(Request.Files[0].FileName);
-                string extens = Path.GetExtension(Request.Files[0].FileName);
-                string path = "~/Image/" + fileName + extens;
+                var fileName = Path.GetFileName(Request.Files[0].FileName);
+                var extens = Path.GetExtension(Request.Files[0].FileName);
+                var path = "~/Image/" + fileName + extens;
                 Request.Files[0].SaveAs(Server.MapPath(path));
                 emp.EmployeeImage = "/Image/" + fileName + extens;
             }
+
             con.Employees.Add(emp);
             con.SaveChanges();
             return RedirectToAction("Index");
@@ -49,24 +48,25 @@ namespace MvcOnlineCommercialAutomation.Controllers
 
         public ActionResult BringEmployee(int id)
         {
-            List<SelectListItem> val2 = (from x in con.Departments.ToList()
-                                         select new SelectListItem
-                                         {
-                                             Text = x.DepartmentName,
-                                             Value = x.DepartmentID.ToString()
-                                         }).ToList();
+            var val2 = (from x in con.Departments.ToList()
+                select new SelectListItem
+                {
+                    Text = x.DepartmentName,
+                    Value = x.DepartmentID.ToString()
+                }).ToList();
             ViewBag.empdp = val2;
 
             var vals2 = con.Employees.Find(id);
             return View("BringEmployee", vals2);
         }
+
         public ActionResult UpdateEmployee(Employee emp)
         {
             if (Request.Files.Count > 0)
             {
-                string fileName = Path.GetFileName(Request.Files[0].FileName);
-                string extens = Path.GetExtension(Request.Files[0].FileName);
-                string path = "~/Image/" + fileName + extens;
+                var fileName = Path.GetFileName(Request.Files[0].FileName);
+                var extens = Path.GetExtension(Request.Files[0].FileName);
+                var path = "~/Image/" + fileName + extens;
                 Request.Files[0].SaveAs(Server.MapPath(path));
                 emp.EmployeeImage = "/Image/" + fileName + extens;
             }

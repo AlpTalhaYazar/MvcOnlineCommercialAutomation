@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using MvcOnlineCommercialAutomation.Models.Classes;
 
@@ -10,7 +7,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
     public class DepartmentController : Controller
     {
         // GET: Department
-        Context con = new Context();
+        private readonly Context con = new Context();
 
         public ActionResult Index()
         {
@@ -23,6 +20,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
         {
             return View();
         }
+
         [HttpPost]
         public ActionResult AddDepartment(Department d)
         {
@@ -44,6 +42,7 @@ namespace MvcOnlineCommercialAutomation.Controllers
             var department = con.Departments.Find(id);
             return View("BringDepartment", department);
         }
+
         public ActionResult UpdateDepartment(Department d)
         {
             var dpt = con.Departments.Find(d.DepartmentID);
@@ -63,7 +62,8 @@ namespace MvcOnlineCommercialAutomation.Controllers
         public ActionResult DepartmentEmployeeSale(int id)
         {
             var vals3 = con.SalesTransactions.Where(x => x.EmployeeID == id).ToList();
-            var empnm = con.Employees.Where(x => x.EmployeeID == id).Select(y => y.EmployeeFirstName + " " + y.EmployeeLastName).FirstOrDefault();
+            var empnm = con.Employees.Where(x => x.EmployeeID == id)
+                .Select(y => y.EmployeeFirstName + " " + y.EmployeeLastName).FirstOrDefault();
             ViewBag.empnm = empnm;
             return View(vals3);
         }
