@@ -26,6 +26,7 @@
         <th>Category</th>
         <th>Delete</th>
         <th>Update</th>
+        <th>Sale</th>
     </tr>
 
     @foreach (var p in Model)
@@ -39,6 +40,7 @@
             <td>@p.Category.CategoryName</td>
             <td><a href="/Product/DeleteProduct/@p.ProductID" class="btn btn-danger">Delete</a></td>
             <td><a href="/Product/BringProduct/@p.ProductID" class="btn btn-warning">Update</a></td>
+            <td><a href="/Product/MakeSale/@p.ProductID" class="btn btn-default" style="background-color:aqua">Sale</a></td>
         </tr>
     }
 </table>

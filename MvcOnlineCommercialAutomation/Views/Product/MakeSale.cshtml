@@ -1,0 +1,35 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.SalesTransaction
+
+@{
+    ViewBag.Title = "MakeSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Make Sale</h2>
+<br />
+
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.ProductID)
+    @Html.TextBoxFor(x => x.ProductID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.EmployeeID)
+    @Html.TextBoxFor(x => x.EmployeeID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ClientID)
+    @Html.TextBoxFor(x => x.ClientID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Price)
+    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Total)
+    @Html.TextBoxFor(x => x.Total, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date)
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Make Sale</button>
+</form>

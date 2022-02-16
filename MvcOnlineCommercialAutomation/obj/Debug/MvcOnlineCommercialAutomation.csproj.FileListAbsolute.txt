@@ -72,7 +72,6 @@ C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAut
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\Newtonsoft.Json.xml
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\Antlr3.Runtime.pdb
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\obj\Debug\MvcOnlineCommercialAutomation.csproj.AssemblyReference.cache
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\obj\Debug\MvcOnlineCommercialAutomation.csproj.CoreCompileInputs.cache
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\obj\Debug\MvcOnlineCommercialAutomation.csproj.CopyComplete
 C:\Users\talha\source\repos\MvcOnlineCommercialAutomation\MvcOnlineCommercialAutomation\obj\Debug\MvcOnlineCommercialAutomation.dll

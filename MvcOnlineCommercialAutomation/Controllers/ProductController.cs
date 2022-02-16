@@ -105,5 +105,23 @@ namespace MvcOnlineCommercialAutomation.Controllers
             return View(vals1);
         }
 
+        [HttpGet]
+        public ActionResult MakeSale()
+        {
+            List<SelectListItem> val3 = (from x in con.Employees.ToList()
+                                         select new SelectListItem
+                                         {
+                                             Text = x.EmployeeFirstName + " " + x.EmployeeLastName,
+                                             Value = x.EmployeeID.ToString()
+                                         }).ToList();
+            ViewBag.vl3 = val3;
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult MakeSale(SalesTransaction s)
+        {
+            return View();
+        }
     }
 }
